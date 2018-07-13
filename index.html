@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<link rel="icon" type="image/gif" href="img/favicon.png">
+	<title>PixiJs</title>
+	<style type="text/css" media="screen">
+		*{
+			padding:0;
+			margin:0;
+		}
+	</style>
+</head>
+<body>
+	<script src="libs/pixi.js"></script>
+	<script>
+		let app = new PIXI.Application({
+		    // width: 256,         // default: 800
+		    // height: 256,        // default: 600
+		    // antialias: true,    // default: false 文字边缘圆滑
+		    // transparent: false, // default: false 透明度
+		    // resolution: 1       // default: 1
+		  }
+		);
+		app.renderer.backgroundColor = 0xff0000;
+		app.renderer.autoResize = true;
+		console.log(app.renderer.view.width);
+		console.log(app.renderer.view.height);
+		//如果你想让canvas占据整个窗口，你可以将这些CSS代码放在文档中，并且刷新你浏览器窗口的大小。
+		app.renderer.view.style.position = "absolute";
+		app.renderer.view.style.display = "block";
+		app.renderer.autoResize = true;
+		app.renderer.resize(window.innerWidth, window.innerHeight);
+		document.body.appendChild(app.renderer.view);
+	</script>
+</body>
+</html>
